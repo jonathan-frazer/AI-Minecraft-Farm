@@ -4,17 +4,17 @@ import keyboard
 import time
 import sounddevice as sd
 from scipy.io.wavfile import write
-import openai
 import tempfile
 from pydantic import BaseModel, Field
 from typing import Literal
 from mcrcon import MCRcon
 import speech_recognition as sr
 import numpy as np
-import tempfile
 from langchain.prompts import ChatPromptTemplate
 from langchain_openai import ChatOpenAI
+from dotenv import load_dotenv
 
+load_dotenv()
 recognizer = sr.Recognizer()
 animal_prompt = ChatPromptTemplate.from_messages([
     ("system", (
