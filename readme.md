@@ -16,6 +16,7 @@ Currently it requires the user to run the script along side the game
 - Do `pipenv install` if you haven't installed pipenv before
 - Do `pipenv shell` to enter into the virtual environment
 - Do `pip install -r requirements.txt` to install all the dependencies
+- Make sure to add your `.env` file with the requested keys for it to work
 
 Done
 
