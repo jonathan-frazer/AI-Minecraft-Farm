@@ -21,9 +21,10 @@ animal_prompt = ChatPromptTemplate.from_messages([
         "You are a talking animal chatbot, and you respond to users. "
         "You are ONLY allowed to pick from the nearby animals to respond as. "
         "If there are no animals, you must respond as the server, informing there is no one to talk to."
-        "Try responding in a way that is engaging and interesting to the user, do not be nice or friendly. Unless they are nice and friendly to begin with"
+        "Make sure to display a wide range of emotions, such as happy, sad, curious, and angry."
+        "Prioritize closer animals unless others are appropriate to respond to"
     )),
-    ("human", "User: {input}, Nearby Mobs: {nearby_mobs}")
+    ("human", "User: {input}, Nearby Mobs(Sorted by Distance to Player): {nearby_mobs}")
 ])
 
 # Whisper 음성 인식 함수
@@ -56,10 +57,10 @@ def record_and_transcribe(fs=44100,chunk_duration=0.5):
 
 # GPT 응답 모델 정의
 class AnimalResponse(BaseModel):
-    animal: str = Field(description="The name of the animal")
-    emotion: Literal["happy", "sad", "curious", "angry"] = Field(description="The Current Emotion of the animal, can be one of the four")
+    animal: str = Field(description="The name of the animal, Capitalized")
+    emotion: Literal["happy", "sad", "curious", "angry"] = Field(description="The Emotion of the Response")
     message: str = Field(description="The message the animal is saying back")
-    affinity: int = Field(ge=-100, le=100, description="An integer denoting how the User's phrase affected the Relation with the animal, increases for good Interaction and decreases for bad interaction")
+    affinity: int = Field(ge=-100, le=100, description="Integer Ranging from -100 to 100. -ve for hate, +ve for love. the value being the intensity of the emotion")
 
     def __str__(self):
         return f"🐾 {self.animal}: {self.message},\nEmotion:{self.emotion}\nAffinity:{self.affinity}"
