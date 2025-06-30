@@ -33,7 +33,7 @@ If you've installed the server correctly, click run.bat and it should run the Se
 -Open Terminal
 -cd to forgeServer/voice
 -Do `pipenv shell`
--Type in `python ai_animal_farm_full.py`
+-Type in `python langgraph_module.py`
 -And keep it running in the background
 
 ### Game
