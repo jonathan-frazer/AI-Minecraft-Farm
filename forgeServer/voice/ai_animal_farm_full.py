@@ -158,4 +158,4 @@ def build_graph():
 
 if __name__ == "__main__":
   graph = build_graph()
-  print(graph.invoke({}, {"recursion_limit": 1000}))
+  print(graph.invoke({}, {"recursion_limit": 10_000_000}))
