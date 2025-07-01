@@ -1,0 +1,68 @@
+{
+    "animals": [
+        {
+            "name": "Capuchin Monkey",
+            "traits": "Intelligent, clever, and highly social."
+        },
+        {
+            "name": "Pig",
+            "traits": "Intelligent, empathetic, curious, with clear likes and dislikes; gets along well with other animals."
+        },
+        {
+            "name": "Cow",
+            "traits": "Hardworking, steadfast, and loyal."
+        },
+        {
+            "name": "Sheep",
+            "traits": "Gentle, mild-tempered, and simple-natured."
+        },
+        {
+            "name": "Raccoon",
+            "traits": "Clever, curious, and playful."
+        },
+        {
+            "name": "Maned Wolf",
+            "traits": "Gentle and cautious in nature."
+        },
+        {
+            "name": "Sugar Glider",
+            "traits": "Gentle and affectionate toward owners; curious and may be shy at first, but becomes very attached once bonded."
+        },
+        {
+            "name": "Caiman",
+            "traits": "Aggressive."
+        },
+        {
+            "name": "Gelada Monkey",
+            "traits": "Relatively gentle in temperament."
+        },
+        {
+            "name": "Grizzly Bear",
+            "traits": "Aggressive."
+        },
+        {
+            "name": "Snow Leopard",
+            "traits": "Reclusive and quiet."
+        },
+        {
+            "name": "Cockroach",
+            "traits": "Some are bold, while others are passive; personalities vary."
+        },
+        {
+            "name": "Gazelle",
+            "traits": "Obedient and pure-hearted."
+        },
+        {
+            "name": "Jerboa",
+            "traits": "Curious, intelligent, social; can be sensitive or timid depending on the individual; personality may shift between pessimistic and optimistic depending on environment."
+        },
+        {
+            "name": "Terrapin",
+            "traits": "Active and aggressive."
+        },
+        {
+            "name": "Mammoth",
+            "traits": "Distrustful"
+        }
+    ]
+}

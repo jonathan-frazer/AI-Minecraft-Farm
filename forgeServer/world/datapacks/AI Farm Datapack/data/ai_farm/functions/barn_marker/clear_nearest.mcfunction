@@ -1,0 +1,1 @@
+kill @e[type=marker,tag=barnMarker,limit=1,sort=nearest]
