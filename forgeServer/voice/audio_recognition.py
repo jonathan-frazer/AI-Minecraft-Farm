@@ -10,7 +10,6 @@ from scipy.io.wavfile import write
 def record_and_transcribe(fs=44100,chunk_duration=0.5):
     audio_chunks = []
     try:
-        keyboard.wait('c')
         with sd.InputStream(samplerate=fs, channels=1, dtype='int16') as stream:
             while keyboard.is_pressed('c'):
                 #Grab the Mobs Attention
@@ -30,6 +29,7 @@ def record_and_transcribe(fs=44100,chunk_duration=0.5):
                     model="whisper-1",
                     file=f
                 )
+                    
                 return result.text
 
     except KeyboardInterrupt:

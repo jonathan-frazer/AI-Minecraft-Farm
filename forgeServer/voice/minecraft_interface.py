@@ -14,16 +14,18 @@ RCON_HOST = os.getenv("RCON_HOST")
 RCON_PASSWORD = os.getenv("RCON_PASSWORD")
 RCON_PORT = int(os.getenv("RCON_PORT"))
 
-"""
-Causes a Mob to Look at you and Listen and for a Given Duration
-Returns a list of the Nearby Mobs who are listening
-"""
-def mob_fetch(text,suppressEcho=True,radius=6):
+"""Echoes a message to the Minecraft Server"""
+def echo_message(message):
     try:
-        with MCRcon(RCON_HOST, RCON_PASSWORD,port=RCON_PORT) as mcr:   
-            if not suppressEcho and text:
-                mcr.command(f'execute as {PLAYER_NAME} run say {text}')
+        with MCRcon(RCON_HOST, RCON_PASSWORD,port=RCON_PORT) as mcr:
+            mcr.command(f'execute as {PLAYER_NAME} run say {message}')
+    except Exception as e:
+        print("❌ Could Not Connect to MC Server:",e)
 
+"""Returns a list of the Nearby Mobs who are listening"""
+def mob_fetch(radius=4):
+    try:
+        with MCRcon(RCON_HOST, RCON_PASSWORD,port=RCON_PORT) as mcr:
             mcr.command(r"data merge storage ai_farm:mobs {nearby_mobs:[]}")
             mcr.command(f'execute as {PLAYER_NAME} at @s positioned ^ ^ ^{radius//2-1} as @e[type=!#ai_farm:nalive,distance=..{radius},type=!player] at @s run function ai_farm:data_store/1')
             results = mcr.command('data get storage ai_farm:mobs nearby_mobs')
@@ -35,9 +37,10 @@ def mob_fetch(text,suppressEcho=True,radius=6):
             return nearby_mobs
         
     except Exception as e:
-        print("Could Not Connect to MC Server:",e)
+        print("❌ Could Not Connect to MC Server:",e)
 
-def attention_grab(radius=6,max_duration=300):
+"""Grabs the Attention of the Mobs within a given radius, Forcing them to stop and listen"""
+def attention_grab(radius=4,max_duration=300):
     try:
         with MCRcon(RCON_HOST, RCON_PASSWORD,port=RCON_PORT) as mcr:   
             mcr.command(f'scoreboard players set {PLAYER_NAME} playerSpeakDur {max_duration}')
@@ -46,8 +49,9 @@ def attention_grab(radius=6,max_duration=300):
             mcr.command(f'effect give {PLAYER_NAME} weakness 2 4 true')
             mcr.command(f'effect give {PLAYER_NAME} jump_boost 2 144 true')
     except Exception as e:
-        print("Could Not Connect to MC Server:",e)
+        print("❌ Could Not Connect to MC Server:",e)
 
+"""Responds to the User with a with a proper formatted message, affinity and emotion"""
 def mob_respond(mob_name, message, affinity=0, emotion="curious"):
     def emotion_to_score(emotion):
         mapping = { "happy": 1, "sad": 2, "curious": 3, "angry": 4 }
@@ -66,6 +70,7 @@ def mob_respond(mob_name, message, affinity=0, emotion="curious"):
     except Exception as e:
         print("❌ Error sending to Minecraft:", e)
 
+"""Stops the Listening of the Mobs, and resets their scores"""
 def stop_listen():
     try:
         with MCRcon(RCON_HOST, RCON_PASSWORD,port=RCON_PORT) as mcr:   

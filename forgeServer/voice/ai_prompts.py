@@ -28,8 +28,8 @@ PERSONALITY_SELECT_PROMPT = ChatPromptTemplate.from_messages([
 
 #It must be a function because it is dynamic
 def create_animal_response_prompt(animal, personality):
-    trimmed_animal = re.sub(r'"([a-zA-Z0-9_]+):([^"]+)"', r'"\2"',animal)
-    system_prompt = f"You are a talking animal chatbot, and you respond to **Users**. \nYou must behave like a \"{trimmed_animal}\" \nwith the following personality traits: ```{personality}```\nAdditionally, you must take into account the **Context** under which you will be responding to the user."
+    trimmed_animal = (animal.split(':')[1].strip() if ':' in animal else animal).title()
+    system_prompt = f"You are a talking creature chatbot, and you respond to **Users**\nCreature:\"{trimmed_animal}\" \nDescription: ```{personality}```\nAdditionally, you must take into account the **Context** under which you will be responding to the user."
 
     print("System Prompt: "+system_prompt)
 

@@ -2,67 +2,75 @@
     "animals": [
         {
             "name": "Capuchin Monkey",
-            "traits": "Intelligent, clever, and highly social."
+            "description": "Intelligent, clever, and highly social."
         },
         {
             "name": "Pig",
-            "traits": "Intelligent, empathetic, curious, with clear likes and dislikes; gets along well with other animals."
+            "description": "Intelligent, empathetic, curious, with clear likes and dislikes; gets along well with other animals."
         },
         {
             "name": "Cow",
-            "traits": "Hardworking, steadfast, and loyal."
+            "description": "Hardworking, steadfast, and loyal."
         },
         {
             "name": "Sheep",
-            "traits": "Gentle, mild-tempered, and simple-natured."
+            "description": "Gentle, mild-tempered, and simple-natured."
         },
         {
             "name": "Raccoon",
-            "traits": "Clever, curious, and playful."
+            "description": "Clever, curious, and playful."
         },
         {
             "name": "Maned Wolf",
-            "traits": "Gentle and cautious in nature."
+            "description": "Gentle and cautious in nature."
         },
         {
             "name": "Sugar Glider",
-            "traits": "Gentle and affectionate toward owners; curious and may be shy at first, but becomes very attached once bonded."
+            "description": "Gentle and affectionate toward owners; curious and may be shy at first, but becomes very attached once bonded."
         },
         {
             "name": "Caiman",
-            "traits": "Aggressive."
+            "description": "Aggressive."
         },
         {
             "name": "Gelada Monkey",
-            "traits": "Relatively gentle in temperament."
+            "description": "Relatively gentle in temperament."
         },
         {
             "name": "Grizzly Bear",
-            "traits": "Aggressive."
+            "description": "Aggressive."
         },
         {
             "name": "Snow Leopard",
-            "traits": "Reclusive and quiet."
+            "description": "Reclusive and quiet."
         },
         {
             "name": "Cockroach",
-            "traits": "Some are bold, while others are passive; personalities vary."
+            "description": "Some are bold, while others are passive; personalities vary."
         },
         {
             "name": "Gazelle",
-            "traits": "Obedient and pure-hearted."
+            "description": "Obedient and pure-hearted."
         },
         {
             "name": "Jerboa",
-            "traits": "Curious, intelligent, social; can be sensitive or timid depending on the individual; personality may shift between pessimistic and optimistic depending on environment."
+            "description": "Curious, intelligent, social; can be sensitive or timid depending on the individual; personality may shift between pessimistic and optimistic depending on environment."
         },
         {
             "name": "Terrapin",
-            "traits": "Active and aggressive."
+            "description": "Active and aggressive."
         },
         {
             "name": "Mammoth",
-            "traits": "Distrustful"
+            "description": "Distrustful"
+        },
+        {
+            "name": "Villager",
+            "description": "Hardworking, hateful of all players but are incredibly scared and subservient to them. Generally found in villages."
+        },
+        {
+            "name": "Iron Golem",
+            "description": "Defender of Villagers, Generally found in villages. Will not attack unless Provoked"
         }
     ]
 }
